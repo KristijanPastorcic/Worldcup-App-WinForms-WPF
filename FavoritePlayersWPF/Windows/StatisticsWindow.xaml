@@ -1,0 +1,158 @@
+﻿<Window x:Class="FavoritePlayersWPF.Windows.StatisticsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FavoritePlayersWPF.Windows"
+                xmlns:lang="clr-namespace:FavoritePlayersWPF.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static lang:Resources.statistics}" Height="450" Width="300"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard Duration="00:00:5" Storyboard.TargetProperty="Opacity">
+                    <DoubleAnimation From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        
+        <!--first row -->
+        <Label
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="{x:Static lang:Resources.name}"/>
+
+        <Label
+            Grid.Row="1"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="{x:Static lang:Resources.fifa_code}"/>
+
+        <Label
+            Grid.Row="2"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="{x:Static lang:Resources.games_played}"/>
+
+        <Label
+            Grid.Row="3"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="{x:Static lang:Resources.wins}"/>
+
+        <Label
+            Grid.Row="4"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="{x:Static lang:Resources.losses}"/>
+
+        <Label
+            Grid.Row="5"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="{x:Static lang:Resources.draws}"/>
+
+        <Label
+            Grid.Row="6"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="{x:Static lang:Resources.goals}"/>
+
+        <Label
+            Grid.Row="7"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="{x:Static lang:Resources.goals_taken}"/>
+
+        <Label
+            Grid.Row="8"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="{x:Static lang:Resources.diff}"/>
+        
+        
+        <!--second row-->
+
+        <Label x:Name="name"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            />
+
+        <Label x:Name="fifa"
+            Grid.Column="1"
+               Grid.Row="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            />
+
+        <Label x:Name="gamesPlayed"
+            Grid.Column="1"
+               Grid.Row="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            />
+
+        <Label x:Name="wins"
+            Grid.Column="1"
+               Grid.Row="3"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            />
+
+        <Label x:Name="losses"
+            Grid.Column="1"
+               Grid.Row="4"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            />
+
+        <Label x:Name="draws"
+            Grid.Column="1"
+               Grid.Row="5"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            />
+
+        <Label x:Name="goals"
+            Grid.Column="1"
+               Grid.Row="6"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            />
+
+        <Label x:Name="goalsTaken"
+            Grid.Column="1"
+               Grid.Row="7"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            />
+
+        <Label x:Name="diff"
+            Grid.Column="1"
+               Grid.Row="8"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            />
+    </Grid>
+</Window>
