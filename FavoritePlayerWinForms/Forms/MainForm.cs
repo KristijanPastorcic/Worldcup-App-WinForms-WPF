@@ -20,13 +20,11 @@ namespace FavoritePlayerWinForms.Forms
 {
     public partial class MainForm : Form
     {
-        private readonly string SETTINGS = Directory.GetParent
-            (Directory.GetCurrentDirectory())
-            .Parent.Parent.FullName + Path.DirectorySeparatorChar + "settings.txt";
+        private readonly string SETTINGS;
 
-        private readonly string PLAYERS = Directory.GetParent
-            (Directory.GetCurrentDirectory())
-            .Parent.Parent.FullName + Path.DirectorySeparatorChar + "players.txt";
+
+
+        private readonly string PLAYERS;
 
         public int count { get; set; }
         private const char SEPARATOR = '|';
@@ -46,6 +44,23 @@ namespace FavoritePlayerWinForms.Forms
 
         public MainForm()
         {
+            try
+            {
+                SETTINGS = Directory.GetParent(Directory.GetCurrentDirectory())
+                    .Parent
+                    .Parent
+                    .FullName + Path.DirectorySeparatorChar + "settings.txt";
+
+                PLAYERS = Directory.GetParent(Directory.GetCurrentDirectory())
+                    .Parent
+                    .Parent
+                    .FullName + Path.DirectorySeparatorChar + "players.txt";
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
             if (!File.Exists(SETTINGS) || string.IsNullOrWhiteSpace(File.ReadAllText(SETTINGS)))
             {
                 //Početne postavke
@@ -316,7 +331,7 @@ namespace FavoritePlayerWinForms.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Resources.cant_get_data, MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                MessageBox.Show(ex.Message, Resources.cant_get_data, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
